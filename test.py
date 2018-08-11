@@ -12,7 +12,7 @@ class TestURLShorten(unittest.TestCase):
 
     def test_get(self):
         rv = self.client.get("/?arg1=2&arg2=3&op=add")
-        json = rv.get_json()
+        json = rv.json()
         print (json['result'])
         self.assertTrue(float(json['result']) == 5)
         self.assertTrue(rv.status_code == 200)
